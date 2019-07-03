@@ -1,30 +1,33 @@
 <template>
-  <div class="mx-auto py-10">
-    <div class="border m-6 rounded-lg bg-white mx-auto max-w-sm shadow-lg rounded-lg overflow-hidden">
-      <div class="sm:flex sm:items-center px-6 py-4">
-        <img
-          class="block h-16 sm:h-24 rounded-full mx-auto mb-4 sm:mb-0 sm:mr-4 sm:ml-0"
-          :src="avatarImg"
-          alt="Avatar image"
-        >
-        <div class="text-center sm:text-left sm:flex-grow">
-          <div class="mb-4">
-            <p class="text-xl leading-tight">{{ name }}</p>
-            <p class="text-m leading-tight">{{ email }}</p>
-            <p class="text-sm leading-tight text-grey-dark">{{ phone }}</p>
+  <section class="mx-auto">
+
+      <div class="sm:w-full md:w-1/2 mx-auto bg-white rounded-lg shadow-lg leading-tight">
+        <div class="border-b px-4 pb-6">
+          <div class="text-center flex mb-4">
+            <img 
+              class="h-32 w-32 rounded-full border-4 border-white -mt-12 mx-auto" 
+              src="https://randomuser.me/api/portraits/women/21.jpg" 
+              alt="Avatar image"
+            />
           </div>
-          <div class="flex flex-wrap">
-            <button
-              class="text-xs font-semibold rounded-full px-4 py-1 mx-3 leading-normal bg-white border border-blue text-blue hover:bg-blue hover:text-white"
-            >Email</button>
-            <button
-              class="text-xs font-semibold rounded-full px-4 py-1 leading-normal bg-white border border-purple text-purple hover:bg-purple hover:text-white"
-            >Call</button>
+          <div class="profile-information">
+            <h3 class="font-bold text-2xl mb-1 text-center">{{ name }}</h3>
+            <p class="text-center">{{ `${occupation} at ${company}` }}</p>
+            <p class="text-center my-4"><strong>email:</strong> {{ email }}</p> 
+            <p class="text-center my-4"><strong>phone:</strong> {{ phone }}</p> 
           </div>
         </div>
+        <div class="px-4 py-4">
+            <div class="flex justify-center text-grey-darker mb-4">
+                <span class="font-semibold">Contact me</span>
+            </div>
+            <div class="flex">
+              <button class="flex-1 rounded-full border-2 bg-blue-500 hover:bg-blue-600 border-grey text-white antialiased font-bold hover:bg-blue-dark px-4 py-2 mr-2">Phone</button>
+              <button class="flex-1 rounded-full border-2 hover:bg-gray-200 border-grey font-semibold text-black px-4 py-2">Message</button>
+            </div>
+        </div>
       </div>
-    </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -32,6 +35,14 @@ export default {
   name: "ProfileCard",
   props: {
     name: {
+      type: String,
+      default: ''
+    },
+    occupation: {
+      type: String,
+      default: ''
+    },
+    company: {
       type: String,
       default: ''
     },
