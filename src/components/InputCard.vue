@@ -1,6 +1,5 @@
 <template>
   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-
     <form-field class="mb-4" v-model="name" label="Name" placeholder="Your Name" />
     <form-field class="mb-4" v-model="company" label="Company" placeholder="Company Name" />
     <form-field class="mb-4" v-model="occupation" label="Occupation" placeholder="Your Occupation" />
@@ -9,12 +8,18 @@
     <form-field class="mb-4" v-model="avatarImg" label="Avatar Image" type="file" />
 
     <div class="flex items-center justify-between mt-8">
-      <a @click="clearFields" class="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800" href="#">
-        Clear All
-      </a>
-      <button @click="submitUser" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-        Submit
-      </button>
+      <span
+        @click="clearFields" 
+        class="inline-block align-baseline font-bold text-sm text-red-500 hover:text-red-800 cursor-pointer"
+        v-text="'Clear All'"
+      />
+
+      <button 
+        @click.prevent="submitUser" 
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
+        type="submit"
+        v-text="'Submit'"
+      />
     </div>
   </form>
 </template>

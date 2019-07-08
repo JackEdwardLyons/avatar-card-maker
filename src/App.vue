@@ -1,24 +1,23 @@
 <template>
   <div class="font-sans" v-cloak>
     <ResponsiveHeader />
-      <!-- Two columns -->
-      <div class="bg-gray-400">
-        <div class="flex flex-col-reverse pt-32 md:pt-16 md:flex-row items-center justify-center bg-gray-400 ">
-          <div class="w-full max-w-lg md:w-1/2 p-4 ">
-            <InputCard @submitUser="logItOut" />
-          </div>
-          <div class="w-full max-w-md sm:w-1/2 pb-16 py-auto">
-            <ProfileCard
-              :name="name"
-              :occupation="occupation"
-              :company="company"
-              :email="email"
-              :phone="phone"
-              :avatarImg="avatarImg"
-            />
-          </div>
+    <div class="bg-gray-400">
+      <div class="flex flex-col-reverse pt-32 md:pt-16 md:flex-row items-center justify-center bg-gray-400 ">
+        <div class="w-full max-w-lg md:w-1/2 p-4 ">
+          <InputCard @submitUser="submitUser" />
+        </div>
+        <div class="w-full max-w-md sm:w-1/2 pb-16 py-auto">
+          <ProfileCard
+            :name="name"
+            :occupation="occupation"
+            :company="company"
+            :email="email"
+            :phone="phone"
+            :avatarImg="avatarImg"
+          />
         </div>
       </div>
+    </div>
   </div>
 </template>
 
@@ -45,8 +44,7 @@ export default {
     }
   },
   methods: {
-    logItOut ({ name, occupation, company, email, phone, avatarImg }) {
-      // eslint-disable-next-line
+    submitUser ({ name, occupation, company, email, phone, avatarImg }) {
       this.name = name
       this.occupation = occupation
       this.company = company
@@ -57,6 +55,4 @@ export default {
   }
 }
 </script>
-<style>
-  
-</style>
+

@@ -12,7 +12,7 @@
         required
       />
     </div>
-    
+
     <div v-else>
       <label class="block text-gray-700 text-sm font-bold mb-2" for="upload-input">Avatar Image</label>
       <div class="flex" :class="{ 'justify-around': uploadFile.image }">
