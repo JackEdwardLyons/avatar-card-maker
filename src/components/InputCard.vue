@@ -1,5 +1,4 @@
 <template>
-<div class="sm:max-w-md mx-auto">
   <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
 
     <form-field class="mb-4" v-model="name" label="Name" placeholder="Your Name" />
@@ -18,8 +17,6 @@
       </button>
     </div>
   </form>
-</div>
-
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 <template>
-  <section class="mx-auto">
+  <section class="mx-auto max-w-sm">
 
-      <div class="sm:w-full md:w-1/2 mx-auto bg-white rounded-lg shadow-lg leading-tight">
+      <div class="sm:w-full bg-white rounded-lg shadow-lg leading-tight">
         <div class="border-b px-4 pb-6">
           <div class="text-center flex mb-4">
             <img 
               class="h-32 w-32 rounded-full border-4 border-white -mt-12 mx-auto" 
-              src="https://randomuser.me/api/portraits/women/21.jpg" 
+              :src="avatarImg" 
               alt="Avatar image"
             />
           </div>
@@ -36,27 +36,22 @@ export default {
   props: {
     name: {
       type: String,
-      default: ''
     },
     occupation: {
       type: String,
-      default: ''
     },
     company: {
       type: String,
-      default: ''
     },
     email: {
       type: String,
-      default: ''
     },
     phone: {
       type: [String, Number],
-      default: ''
     },
     avatarImg: {
       type: String,
-      default: 'https://www.radiotodaybd.fm/wp-content/uploads/2019/02/img_avatar.png?fbclid=IwAR2LEIMdiKkcJws2jrY7lV3VeatrQf7EhcferhX1NWJ-40W9NUCjbeiiOGY'
+      default: 'https://www.w3schools.com/howto/img_avatar2.png'
     }
   }
 };

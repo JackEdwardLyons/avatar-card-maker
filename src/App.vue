@@ -1,13 +1,13 @@
 <template>
-  <div id="app" class="font-sans">
+  <div class="font-sans" v-cloak>
     <ResponsiveHeader />
       <!-- Two columns -->
-      <div class="bg-gray-400 pt-10 responsive-height">
-        <div class="flex flex-col-reverse md:flex-row items-center justify-center">
-          <div class="w-full sm:w-1/2 md:w-1/2 p-4 inline">
+      <div class="bg-gray-400">
+        <div class="flex flex-col-reverse pt-32 md:pt-16 md:flex-row items-center justify-center bg-gray-400 ">
+          <div class="w-full max-w-lg md:w-1/2 p-4 ">
             <InputCard @submitUser="logItOut" />
           </div>
-          <div class="w-full sm:w-1/2 md:w-1/2 p-4 inline">
+          <div class="w-full max-w-md sm:w-1/2 pb-16 py-auto">
             <ProfileCard
               :name="name"
               :occupation="occupation"
@@ -41,7 +41,7 @@ export default {
       company: '',
       email: '',
       phone: '',
-      avatarImg: ''
+      avatarImg: undefined
     }
   },
   methods: {
@@ -57,15 +57,6 @@ export default {
   }
 }
 </script>
-<style scoped>
-.responsive-height {
-  height: 100%;
-}
-@media screen and (min-width: 766px) {
-  .responsive-height {
-    /* height: 100vh; */
-  }
-}
-
+<style>
+  
 </style>
-
