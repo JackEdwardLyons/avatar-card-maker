@@ -1,5 +1,5 @@
 <template>
-  <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+  <form @submit.prevent="submitUser" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
     <form-field class="mb-4" v-model="name" label="Name" placeholder="Your Name" />
     <form-field class="mb-4" v-model="company" label="Company" placeholder="Company Name" />
     <form-field class="mb-4" v-model="occupation" label="Occupation" placeholder="Your Occupation" />
@@ -15,7 +15,6 @@
       />
 
       <button 
-        @click.prevent="submitUser" 
         class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" 
         type="submit"
         v-text="'Submit'"

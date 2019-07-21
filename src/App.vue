@@ -1,6 +1,6 @@
 <template>
   <div class="font-sans" v-cloak>
-    <ResponsiveHeader />
+    <ResponsiveHeader @changeProfileCardLayout="(payload) => selectedLayout = payload" />
     <div class="bg-gray-400">
       <div class="flex flex-col-reverse pt-32 md:pt-16 md:flex-row items-center justify-center bg-gray-400 ">
         <div class="w-full max-w-lg md:w-1/2 p-4 ">
@@ -8,6 +8,16 @@
         </div>
         <div class="w-full max-w-md sm:w-1/2 pb-16 py-auto">
           <ProfileCard
+            v-if="selectedLayout === 'vertical'"
+            :name="name"
+            :occupation="occupation"
+            :company="company"
+            :email="email"
+            :phone="phone"
+            :avatarImg="avatarImg"
+          />
+          <SlimProfileCard
+            v-else
             :name="name"
             :occupation="occupation"
             :company="company"
@@ -24,6 +34,7 @@
 <script>
 import InputCard from './components/InputCard'
 import ProfileCard from './components/ProfileCard'
+import SlimProfileCard from './components/SlimProfileCard'
 import ResponsiveHeader from './components/ResponsiveHeader'
 
 export default {
@@ -31,6 +42,7 @@ export default {
   components: {
     ProfileCard,
     InputCard,
+    SlimProfileCard,
     ResponsiveHeader
   },
   data() {
@@ -40,7 +52,8 @@ export default {
       company: '',
       email: '',
       phone: '',
-      avatarImg: undefined
+      avatarImg: undefined,
+      selectedLayout: 'vertical'
     }
   },
   methods: {

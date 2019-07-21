@@ -9,7 +9,7 @@
         :id="id"
         :type="type"
         :placeholder="placeholder"
-        required
+        required="true"
       />
     </div>
 

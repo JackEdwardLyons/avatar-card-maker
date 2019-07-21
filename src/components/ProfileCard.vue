@@ -1,5 +1,5 @@
 <template>
-  <section class="mx-auto max-w-sm">
+  <article class="mx-auto max-w-sm">
     <div class="sm:w-full bg-white rounded-lg shadow-lg leading-tight">
       <div class="border-b px-4 pb-6">
         <div class="text-center flex mb-4">
@@ -34,18 +34,20 @@
               <span class="font-semibold">Contact me</span>
           </div>
           <div class="flex">
-            <button 
-              class="flex-1 rounded-full border-2 bg-blue-500 hover:bg-blue-600 border-grey text-white antialiased font-bold hover:bg-blue-dark px-4 py-2 mr-2"
+            <a
+              :href="`tel:${phone}`" 
+              class="text-center flex-1 rounded-full border-2 bg-blue-500 hover:bg-blue-600 border-grey text-white antialiased font-bold hover:bg-blue-dark px-4 py-2 mr-2"
               v-text="'Phone'"
             />
-            <button 
-              class="flex-1 rounded-full border-2 hover:bg-gray-200 border-grey font-semibold text-black px-4 py-2" 
+            <a
+              :href="`mailto:${email}`" 
+              class="text-center flex-1 rounded-full border-2 hover:bg-gray-200 border-grey font-semibold text-black px-4 py-2" 
               v-text="'Message'"
             />
           </div>
       </div>
     </div>
-  </section>
+  </article>
 </template>
 
 <script>
