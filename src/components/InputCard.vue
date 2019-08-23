@@ -4,7 +4,7 @@
     <form-field class="mb-4" v-model="company" label="Company" placeholder="Company Name" />
     <form-field class="mb-4" v-model="occupation" label="Occupation" placeholder="Your Occupation" />
     <form-field class="mb-4" v-model="email" label="Email" type="email" placeholder="Your Best Email" />
-    <form-field class="mb-4" v-model="phone" label="Phone" type="tel" placeholder="Your Best Phone Number" />
+    <form-field class="mb-4" v-model="phone" maxlength="12" label="Phone" type="tel" placeholder="Your Best Phone Number" />
     <form-field class="mb-4" v-model="avatarImg" label="Avatar Image" type="file" />
 
     <div class="flex items-center justify-between mt-8">

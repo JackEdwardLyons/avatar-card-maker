@@ -10,6 +10,7 @@
         :type="type"
         :placeholder="placeholder"
         required="true"
+        v-bind="$attrs"
       />
     </div>
 
@@ -35,6 +36,7 @@
 
 <script>
 export default {
+  inheritAttrs: true,
   props: {
     value: {
       type: String
