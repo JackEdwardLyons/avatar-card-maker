@@ -1,13 +1,13 @@
 <template>
-  <div class="font-sans" v-cloak>
-    <ResponsiveHeader @changeProfileCardLayout="(payload) => selectedLayout = payload" />
-    <div class="bg-gray-400">
+  <section class="font-sans" v-cloak>
+    <responsive-header @changeProfileCardLayout="(payload) => selectedLayout = payload" />
+    <main class="bg-gray-400">
       <div class="flex flex-col-reverse pt-32 md:pt-16 md:flex-row items-center justify-center bg-gray-400 ">
         <div class="w-full max-w-lg md:w-1/2 p-4 ">
-          <InputCard @submitUser="submitUser" />
+          <input-card @submitUser="submitUser" />
         </div>
-        <div class="w-full max-w-md sm:w-1/2 pb-16 py-auto">
-          <ProfileCard
+        <section class="w-full max-w-md sm:w-1/2 pb-16 py-auto">
+          <profile-card
             v-if="selectedLayout === 'vertical'"
             :name="name"
             :occupation="occupation"
@@ -16,7 +16,7 @@
             :phone="phone"
             :avatarImg="avatarImg"
           />
-          <SlimProfileCard
+          <slim-profile-card
             v-else
             :name="name"
             :occupation="occupation"
@@ -25,10 +25,10 @@
             :phone="phone"
             :avatarImg="avatarImg"
           />
-        </div>
+        </section>
       </div>
-    </div>
-  </div>
+    </main>
+  </section>
 </template>
 
 <script>
